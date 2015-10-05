@@ -1,21 +1,23 @@
 html,
 
 body{
-    background-color: #5E5E5E;
+    background-color: #000000;
     margin:0;
     padding:0;
     height:100%;
 }
 
 h1{
+    color:red;
     padding-left: 20px;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: arial black;
 }
 h2{
+    color:red;
     padding-left: 20px;
     font-size: 30px;
-    font-family: sans-serif;
+    font-family: arial black;
     font-weight: bold;
 }
 
@@ -23,7 +25,7 @@ header {
     color: red;
     padding-left: 20px;
     font-size: 40px;
-    font-family: impact;
+    font-family: arial black;
     display: block;
     perspective: 100px;
     perspective-origin: 50% 0;
