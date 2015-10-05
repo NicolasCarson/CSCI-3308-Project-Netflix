@@ -14,7 +14,7 @@ getTrailers.php:
 
     SETUP:
         To run the program user must have a google_id and create a project in the google_dev console.
-        Youtube API V3 must be enabled and the google-api-php-client library must be downloaded.
+        Youtube API V3 must be enabled and the google-api-php-client library must be installed.
         Program requires unique DEVELOPER_KEY and path to goog-api library.
 
         Must create a file trailerURLs.txt, and give others write permissions.
