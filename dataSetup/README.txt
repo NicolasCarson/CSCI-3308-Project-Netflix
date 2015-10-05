@@ -15,13 +15,13 @@ getTrailers.php:
     SETUP:
         To run the program user must have a google_id and create a project in the google_dev console.
         Youtube API V3 must be enabled and the google-api-php-client library must be installed.
-        Program requires unique DEVELOPER_KEY and path to goog-api library.
+        Program requires unique DEVELOPER_KEY and path to google-api library.
 
         Must create a file trailerURLs.txt, and give others write permissions.
 
     USAGE:
-        Program loops through an array of search keywords, fetches the videoID, builds URL and writes output to youtubeURLs.txt.
-        Searches that yeild no results correspond to blank lines in youtubeURLs.txt.
+        Program loops through an array of search keywords, fetches the videoID, builds URL and writes output to trailerURLs.txt.
+        Searches that yeild no results correspond to blank lines in trailerURLs.txt.
 
         Array must be in format:
         $array [
@@ -35,7 +35,7 @@ getTrailers.php:
         adding "official trailer" to each title in  titles.txt (created from formatInfo.sh) will yeild best results.
         (Recommend using vim macro)
 
-        Can be run through local host if LAMP/WAMP/MAMP/XAMP webserver is setup
+        Can be run through local host if LAMP/WAMP/MAMP/XAMP webserver is installed and running
 
     OUTPUT: 
         Creates trailerURLs.txt with full youtube video URLs.
