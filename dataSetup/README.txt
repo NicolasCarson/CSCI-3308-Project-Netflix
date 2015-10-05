@@ -35,7 +35,7 @@ getTrailers.php:
         adding "official trailer" to each title in  titles.txt (created from formatInfo.sh) will yeild best results.
         (Recommend using vim macro)
 
-        Can be run through local host if LAMP/WAMP/MAMP/XAMP webserver is installed and running
+        Can be run through localhost if LAMP/WAMP/MAMP/XAMP webserver is installed and running
 
     OUTPUT: 
         Creates trailerURLs.txt with full youtube video URLs.
