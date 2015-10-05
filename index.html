@@ -4,44 +4,41 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>3 Column Layout</title>
 	<link rel="stylesheet" href="index.css" type="text/css" />
-	
-	
 	</script>	
 </head>
 
 <body>
-
-	<header id="header"><p>Netflix Movie Generator</p></header>
-
-	<div id="container">
-
-		<main id="center" class="column">
-			<article>
-			
-				<h1>Let us pick a movie for you!</h1>
-			
-			</article>								
-		</main>
-			<h2>Genre Selection</h2>
+	
+	<div id="wrapper">
+		<div id="header">
+			<header id="header"><p>Netflix Movie Generator</p></header>
+		</div>
+	    
+	    <div id="content">
+			<div id="container">
+				<main id="center" class="column">
+					<article>
+						<h1>Let us pick a movie for you!</h1>
+					</article>								
+				</main>
+				<h2>Genre Selection</h2>
 				<form action="results.php" method="post">
 				    <button name="Genre" type=submit value="Action">Action & Adventure</button>
 				    <button name="Genre" type=submit value="Documentary">Documentary</button>
 				    <button name="Genre" type=submit value="Comedy">Comedy</button>
 				    <button name="Genre" type=submit value="Romantic">Romantic Comedy</button>
 				</form>
-			
 
-		</nav>
-		
-	<div id="left"></div>
-	<div id="right"></div>
-	<div id="top"></div>
-	<div id="bottom"></div>
-
-	<div id="footer-wrapper">
-		<footer id="footer"><p>Footer...</p></footer>
+				<div id="left"></div>
+				<div id="right"></div>
+				<div id="top"></div>
+				<div id="bottom"></div>
+	        </div>	    	
+	    </div>
+	
+	    <div id="footer">
+	    	<footer id="footer"><p>Footer...</p></footer>
+	    </div>
 	</div>
-
 </body>
-
 </html>
