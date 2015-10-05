@@ -11,39 +11,32 @@
 
 <body>
 
-	<header id="header"><p>Hello and welcome to our website :)</p></header>
+	<header id="header"><p>Netflix Movie Generator</p></header>
 
 	<div id="container">
 
 		<main id="center" class="column">
 			<article>
 			
-				<h1>Heading</h1>
+				<h1>Let us pick a movie for you!</h1>
 			
 			</article>								
 		</main>
-
-		
-		
-		<nav id="left" class="column">
-			<h3>Left heading</h3>
-			<ul>
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-				<li><a href="#">Link 5</a></li>
-			</ul>
-			<h3>Genre Selection</h3>
-			    <button type="Action & Adventure">Action & Adventure</button>
-			    <button type="Documentary">Documentary</button>
-			    <button type="Comedy">Comedy</button>
-			    <button type="Romantic Comedy">Romantic Comedy</button>
-			
+			<h2>Genre Selection</h2>
+				<form action="results.php" method="post">
+				    <button name="Genre" type=submit value="Action">Action & Adventure</button>
+				    <button name="Genre" type=submit value="Documentary">Documentary</button>
+				    <button name="Genre" type=submit value="Comedy">Comedy</button>
+				    <button name="Genre" type=submit value="Romantic">Romantic Comedy</button>
+				</form>
 			
 
 		</nav>
-
+		
+	<div id="left"></div>
+	<div id="right"></div>
+	<div id="top"></div>
+	<div id="bottom"></div>
 
 	<div id="footer-wrapper">
 		<footer id="footer"><p>Footer...</p></footer>

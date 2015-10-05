@@ -1,3 +1,50 @@
 html {
-    background-color: red;
+    background-color: #5E5E5E;
+    position: relative;
+    padding-bottom:0px
 }
+body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+header {
+    color: red;
+    padding-left: 20px;
+    font-size: 40px;
+    font-family: impact;
+    display: block;
+    perspective: 100px;
+    perspective-origin: 50% 0;
+    transform-origin: 0 0;
+    transform: scaleX(80) rotateY(89.5deg);
+}
+h1{
+    padding-left: 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+h2{
+    padding-left: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#top, #bottom, #left, #right {
+	background: red;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 3px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 3px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
