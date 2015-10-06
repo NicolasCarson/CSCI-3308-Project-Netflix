@@ -1,6 +1,8 @@
 Some programs to help gather and parse information for the database
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
 formatInfo.sh:
+-------------------------------------------------------------------------------------------------------------------------------------------------
     instawatchers.com has list of current netflix conent, orginized by genre.
     Create a text file by copying and pasting movie information.
 
@@ -9,7 +11,9 @@ formatInfo.sh:
         descriptions.txt, consisting of all movie descriptions
         titles and descriptions are linked via line number. (line 1 of descriptions.txt describes the title at line 1 of titles.txt)
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
 getTrailers.php:
+-------------------------------------------------------------------------------------------------------------------------------------------------
     Uses youtube API to search by keyword and build youtube URL.
 
     SETUP:
@@ -39,6 +43,34 @@ getTrailers.php:
 
     OUTPUT: 
         Creates trailerURLs.txt with full youtube video URLs.
+
+    NOTE:
+        Results are always appended to the end of the file. To start a clean run first delete contents of trailerURLs.txt
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+getPictureURLs.php:
+------------------------------------------------------------------------------------------------------------------------------------------------
+    Uses google search API to search by keyword and write URL to text file.
+
+    SETUP:
+        Create array of keywords to search.
+        
+        Must create a file named pictureURLs.txt and give others write permisions.
+
+        Array must be in format:
+        $array [
+            0 => "Keywords for item 0",
+            1 => "Keywords for item 1",
+            .
+            .
+            n => "keywords for item n",
+        ]
+
+        Can run through localhost if webserver is installed and running.
+        Prints DONE when file is finished writing.
+
+    OUTPUT:
+        Creates pictureURLs.txt with image urls.
 
     NOTE:
         Results are always appended to the end of the file. To start a clean run first delete contents of trailerURLs.txt
