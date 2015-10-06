@@ -56,7 +56,7 @@ while read line; do
 done <tmpFile.txt
 
 # Remove useless info from title line
-sed -i '' 's/[0-9]\{4\}.*//' titles.txt
+sed -i '' 's/ [0-9]\{4\}.*//' titles.txt
 
 # Clean up
 rm tmpFile.txt
