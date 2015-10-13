@@ -1,76 +1,44 @@
-Some programs to help gather and parse information for the database
+NOTE: 
+    getPictureURLs.php and getTrailerURLs.php should only be used as a last resort as they provide unreliable results.
+    getPictureURLs.php uses Google's image search API to fetch the URL for the top result of a query.
+    getTrailerURLs.php uses Youtube's search API to fetch the video ID for the top result of a query and contructs the youtube video URL.
+    
+    
 
------------------------------------------------------------------------------------------------------------------------------
-formatInfo.sh:
------------------------------------------------------------------------------------------------------------------------------
-    instawatchers.com has list of current netflix conent, orginized by genre.
-    Create a text file by copying and pasting movie information.
+    getMovieInfo.php uses the TMDB API to fetch information about a given film. Unfortunately TMDB does not have a well 
+    established database and many films currently streaming on Netflix cannot be found using TMDB. To compensate for films 
+    not found using TMDB's API, any missing films are added to a "missing-films" file. These films can be added manually if 
+    a better method is not found.
 
-    Output creates 2 files:
-        titles.txt, consisting of all movie titles
-        descriptions.txt, consisting of all movie descriptions
-        titles and descriptions are linked via line number. (line 1 of descriptions.txt describes the title at line 1 of titles.txt)
 
-------------------------------------------------------------------------------------------------------------------------------
-getTrailers.php:
-------------------------------------------------------------------------------------------------------------------------------
-    Uses youtube API to search by keyword and build youtube URL.
+-----------------------------------------------------------------------------------------------------------------------
+getMovieInfo.php
+-----------------------------------------------------------------------------------------------------------------------
+    THIS CODE IS A MODIFIED VERSION OF PIXELEAD0'S tmdb_v3-php-api- PHP WRAPPER.
 
-    SETUP:
-        To run the program user must have a google_id and create a project in the google_dev console.
-        Youtube API V3 must be enabled and the google-api-php-client library must be installed.
-        Program requires unique DEVELOPER_KEY and path to google-api library.
+    ORIGINAL CODE CAN BE FOUND AT -> https://github.com/pixelead0/tmdb_v3-PHP-API- 
+    
+    Usage:
+        A valid TMDB API key is needed to connect to TMDB.
+        Must include path to tmdb-api-php found within modified_tmdb-php-api
+        Enter genre to create  corresponding "Missing-" files
+        Create array of movie titles to search TMDB database.
 
-        Must create a file trailerURLs.txt, and give others write permissions.
+        Must create "Missing-" files and give others write permissions.
+            Missing-Films-Genre.txt
+            Missing-Trailers-Genre.txt
+            Missing-Posters-Genre.txt
+            Missing-Rating-Genre.txt
 
-    USAGE:
-        Program loops through an array of search keywords, fetches the videoID, builds URL and writes output to trailerURLs.txt.
-        Searches that yeild no results correspond to blank lines in trailerURLs.txt.
+    Output:
+        Any missing films or films with missing components will be added to its respective "Missing-" file
+             Missing-Films-Genre.txt    -> stores titles of films not found in TMDB database
+             Missing-Posters-Genre.txt  -> Stores titles of films with no poster
+             Missing-Trailers-Genre.txt -> stores titles of films with no trailer
+             Missing-Ratings-Genre.txt  -> stores titles of films with no rating
 
-        Array must be in format:
-        $array [
-            0 => "Keywords for item 0",
-            1 => "Keywords for item 1",
-            .
-            .
-            n => "keywords for item n",
-        ]
+        Results are linked via line number. 
+             Ex: line 1 of titles, line 1 of trailers, line 1 of posters, line 1 of ratings all refer to the same film.
 
-        adding "official trailer" to each title in  titles.txt (created from formatInfo.sh) will yeild best results.
-        (Recommend using vim macro)
-
-        Can be run through localhost if LAMP/WAMP/MAMP/XAMP webserver is installed and running
-
-    OUTPUT: 
-        Creates trailerURLs.txt with full youtube video URLs.
-
-    NOTE:
-        Results are always appended to the end of the file. To start a clean run first delete contents of trailerURLs.txt
-
------------------------------------------------------------------------------------------------------------------------------
-getPictureURLs.php:
------------------------------------------------------------------------------------------------------------------------------
-    Uses google search API to search by keyword and write URL to text file.
-
-    SETUP:
-        Create array of keywords to search.
-        
-        Must create a file named pictureURLs.txt and give others write permisions.
-
-        Array must be in format:
-        $array [
-            0 => "Keywords for item 0",
-            1 => "Keywords for item 1",
-            .
-            .
-            n => "keywords for item n",
-        ]
-
-        Can run through localhost if webserver is installed and running.
-        Prints DONE when file is finished writing.
-
-    OUTPUT:
-        Creates pictureURLs.txt with image urls.
-
-    NOTE:
-        Results are always appended to the end of the file. To start a clean run first delete contents of trailerURLs.txt
+        Films that are not found in the TMDB database are entered as a blank line in each output file.
+-----------------------------------------------------------------------------------------------------------------------
