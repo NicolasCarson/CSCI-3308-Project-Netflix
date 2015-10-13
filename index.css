@@ -36,9 +36,9 @@ header {
 
 #wrapper {
     min-height:100%;
-    position:relative;
+    position:absolute;
+    left: 24%
 }
-
 
 #footer {
     position:absolute;
