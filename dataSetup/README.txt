@@ -11,9 +11,9 @@ NOTE:
     a better method is not found.
 
 
------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 getMovieInfo.php
------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
     THIS CODE IS A MODIFIED VERSION OF PIXELEAD0'S tmdb_v3-php-api- PHP WRAPPER.
 
     ORIGINAL CODE CAN BE FOUND AT -> https://github.com/pixelead0/tmdb_v3-PHP-API- 
@@ -41,4 +41,4 @@ getMovieInfo.php
              Ex: line 1 of titles, line 1 of trailers, line 1 of posters, line 1 of ratings all refer to the same film.
 
         Films that are not found in the TMDB database are entered as a blank line in each output file.
------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
