@@ -8,6 +8,8 @@ $port = 3306;
 
 $genre = $_POST['Genre'];
 
+echo $genre;
+
 $conn = mysqli_connect($host, $user, $pass, $db, $port) or die(mysql_error());
 
 $sql = "SELECT * FROM movies";
@@ -48,5 +50,6 @@ $result = mysqli_query($conn, $sql);
     <phpp>To be filled out once we have data. :)</p>
 </body>
 </html>
+
 
 
