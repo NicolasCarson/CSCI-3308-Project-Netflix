@@ -12,7 +12,7 @@
 
 2. Usage
 
-   Create a text file containing all film information from instawatchers.com. Execute formatInfo.sh with the text file as an argument.
+   Create a text file containing all raw film information from instawatchers.com. Execute formatInfo.sh with the text file as an argument.
 
 3. Output
 
@@ -32,29 +32,17 @@
 
    Must have [TMDB](https://www.themoviedb.org/?language=en) API_KEY to establish a connection.
 
-   within [getMovieInfo.php](https://github.com/Clacious/CSCI_3308_Project_Netflix/blob/master/dataSetup/dataScripts/getMovieInfo.php) include the path to [modified_tmdb_v3-php-api](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/dataSetup/modified_tmdb-php-api), as well as a TMDB API_KEY. 
+   Within [getMovieInfo.php](https://github.com/Clacious/CSCI_3308_Project_Netflix/blob/master/dataSetup/dataScripts/getMovieInfo.php) include the path to [modified_tmdb_v3-php-api](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/dataSetup/modified_tmdb-php-api), as well as a TMDB API_KEY. 
 
-   Create 4 files to store results.
-   + *trailerURLs.txt*
-   + *posterURLs.txt*
-   + *ratings.txt*
-   + *Missing-Films-"Genre".txt*
-
-   Give others write permissions for each file.
-
-   Array of film titles is used to gather information about each film.
-
-   Specify Genre of films to create "Missing-Films" text file.
-
+   run getMovieInfo.php with 2 command line arguments: 
+      1. titles.txt
+      2. descriptions.txt 
+   
+   Example:
+      php getMovieInfo.php titles.txt descriptions.txt
 
 3. Output
-
-   All trailer URLs are added to *trailerURLs.txt*  
-   All poster URLs are added to *posterURLs.txt*  
-   All film ratings are added to *ratings.txt*   
+    
+   Each field is enclosed by double quotations. Format:
    
-   Any film that yeilds no results add a blank line to each file, preserving the relationship between files. Additionally the title of the film is added to the "Missing-Films" file
-
-    **Files are linked via line**
-
-    Line 1 of each file refers to first entry in the title_array (titles.txt)
+      title, trailer, poster, rating, description
