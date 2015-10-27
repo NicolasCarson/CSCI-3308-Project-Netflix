@@ -1,16 +1,12 @@
  <?php
 
-    include("path/to/tmdb-api.php");
-    $apikey = "ENTER API KEY HERE";
+    include("/path/to/tmdb-api.php");
+    $apikey = "TMDB API-KEY";
     $tmdb = new TMDB($apikey, 'en', true);
     
     # Specify genre for missing film file
     $genre = "Enter Genre Here";
-    
-    # Array for movie titles
-    $titles = [
-    ];
-
+    $file = $genre . "-Film-Info.csv";
 
     function appendFile($fileName, $line) {
     
@@ -19,105 +15,66 @@
         $current .= $line;
         file_put_contents($file, $current);
     }
-
-    for ($i = 1; $i <= count($titles); $i++) {
     
-        # TMDB limits the number of requests per 10 seconds
-        sleep(2); 
+    $titles = fopen($argv[1], "r");
+    $descriptions= fopen($argv[2], "r");
 
-        $title = $titles[$i];
-        $movies = $tmdb->searchMovie($title);
+    if ($titles && $descriptions) { 
 
-        if ($movies) {
+        while (($title = fgets($titles)) !== false && ($description = fgets($descriptions)) !== false) {
 
-            $topResult = true;
+            # TMDB limits the number of requests per 10 seconds
+            sleep(2); 
 
-            foreach ((array)$movies as $movie) {
-                 
-                if ($topResult) {
+            # Reomve newline chars from title and description
+            $title = trim($title);
+            $description = trim($description);
 
-                    $ID = $movie->getID();
-
-                    # Missing movie information is entered as a blank line
-                    $poster = $movie->getPoster();
-                    $trailer = $tmdb->getMovie($ID)->getTrailer();
-                    $rating = $movie->getVoteAverage();
-
-                    if ($poster) {
-                        $moviePoster = $tmdb->getImageURL('w185') . $poster;
-                    } else {
-                        $moviePoster = "";
-                    }
-
-                    if ($trailer) {
-                        $movieTrailer = "https://www.youtube.com/watch?v=" . $trailer;
-                    } else {
-                        $movieTrailer = "";
-                    }
-
-                    if ($rating) {
-                        $movieRating = $rating;
-                    } else {
-                        $movieRating = "";
-                    }
-                   
-                    # Files where movie information are stored
-                    $files = [
-                        0 => "trailerURLs.txt",
-                        1 => "pictureURLs.txt",
-                        2 => "ratings.txt",
-                    ];
-
-                    # Check that movie information corresponds to correct file
-                    $movieInfo = [
-                        0 => $movieTrailer,
-                        1 => $moviePoster,
-                        2 => $movieRating, 
-                    ];
-
-                    # Append movie information to files where information is stored
-                    for ($j = 0; $j < count($files); $j++) {
-
-                        $fileName = $files[$j];
-                        $line =  $movieInfo[$j] . "\n";
-                        appendFile($fileName, $line);
-                    }
-
-                    $topResult = false;
-                    break;
-                } 
-            }
-        } else {
+            $movies = $tmdb->searchMovie($title);
             
-            $missingFilmFile = "Missing-Films-" . $genre . ".txt";
-            
-            # Movies that yield no results write a blank line to all files
-            $moviePoster = "\n";
-            $movieTrailer = "\n";
-            $movieRating = "\n";
-            $title = $title . "\n";
+            # Films that yeild no results are not added to the file
+            if ($movies) {
 
-            $files = [
-                0 => "trailerURLs.txt",
-                1 => "pictureURLs.txt",
-                2 => "ratings.txt",
-                3 => $missingFilmFile,
-            ];
+                $topResult = true;
 
-            $movieInfo = [
-                0 => $movieTrailer,
-                1 => $moviePoster,
-                2 => $movieRating, 
-                3 => $title,
-            ];
+                foreach ((array)$movies as $movie) {
+                     
+                    if ($topResult) {
 
-            for ($j = 0; $j < count($files); $j++) {
+                        $ID = $movie->getID();
+                        $poster= $movie->getPoster();
+                        $trailer = $tmdb->getMovie($ID)->getTrailer();
+                        $rating = $movie->getVoteAverage();
 
-                $fileName = $files[$j];
-                $line =  $movieInfo[$j];
-                appendFile($fileName, $line);
-            }
-            
+                        if ($poster) {
+                            $filmPoster = $tmdb->getImageURL('w185') . $poster;
+                        } else {
+                            $filmPoster = " ";
+                        }
+
+                        if ($trailer) {
+                            $filmTrailer = "https://www.youtube.com/watch?v=" . $trailer;
+                        } else {
+                            $filmTrailer = " ";
+                        }
+
+                        if ($rating) {
+                            $filmRating = $rating;
+                        } else {
+                            $filmRating = " ";
+                        }
+
+                        $line = "\"$title\", \"$filmTrailer\", \"$filmPoster\", \"$filmRating\", \"$description\" \n";
+                        appendFile($file, $line);
+
+                        $topResult = false;
+                        break;
+                    } 
+                }
+            } 
         }
-    }
+    } 
+
+    fclose($titles);
+    fclose($descriptions);
 ?>
