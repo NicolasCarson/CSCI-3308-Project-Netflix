@@ -1,13 +1,32 @@
 #DataBase_Setup
 
-1. Introduction
-   Contains all the programs necessary to create the complete Netflix database.
+Contains all the programs necessary to create the complete Netflix database.
 
-###Netflix.sql
+##[Get_Data](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/DataBase_Setup/Get_Data)   
+Contains all programs to collect and parse film data for database
 
-1. Introduction
-   Sql file to create the Netflix database and all database tables
+##[Load_Data](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/DataBase_Setup/Load_Data)   
+Contains all programs to insert film data into database
 
-2. Usage
-   While on mysql command line enter:
-      source Netflix.sql
+##Netflix.sql
+
+Sql file to create the Netflix database and all database tables
+
+####Usage
+
+
+   Run *source Netflix.sql* from mysql command line 
+   
+
+
+####Output
+
+
+   Creates Netflix database and tables:   
+   + films   
+   + genres   
+   + films\_genres
+
+
+#####ER Diagram   
+![image](https://github.com/MattUhlar/Small_Projects/blob/master/Netflix_ER_Diagram.png)
