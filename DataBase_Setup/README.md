@@ -29,4 +29,4 @@ Sql file to create the Netflix database and all database tables
 
 
 #####ER Diagram   
-![image](https://github.com/MattUhlar/Small_Projects/blob/master/Netflix_ER_Diagram.png)
+![image](https://github.com/Clacious/CSCI_3308_Project_Netflix/blob/master/DataBase_Setup/Netflix_ER_Diagram.png)
