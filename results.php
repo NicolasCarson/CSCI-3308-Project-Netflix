@@ -13,7 +13,7 @@ else
 {
      $N = count($aGenre);
      
-     echo("You selected $N door(s): ");
+     echo("You selected $N genres(s): ");
      for($i=0; $i < $N; $i++)
      {
           echo($aGenre[$i] . " ");
