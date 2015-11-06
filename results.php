@@ -1,21 +1,46 @@
-
 <?php
 $host = "127.0.0.1";
 $user = "root";                    
 $pass = "";                                 
-$db = "netflix"; 
-$port = 3307;
+$db = "Netflix"; 
 
-$genre = $_POST['Genre'];
+$aGenre = $_POST['genre'];
+if(empty($aGenre))
+{
+     echo("You didn't select any genres.");
+}
+else
+{
+     $N = count($aGenre);
+     
+     echo("You selected $N door(s): ");
+     for($i=0; $i < $N; $i++)
+     {
+          echo($aGenre[$i] . " ");
+     }
+}
 
-echo $genre;
 
-$conn = mysqli_connect($host, $user, $pass, $db, $port) or die(mysql_error());
+/*
+foreach($_POST['genre'] as $genre)
+{
+  echo $genre;
+     
+}
+*/
 
-$sql = "SELECT * FROM movies";
+//title trailer poster rating description
+$conn = mysqli_connect($host, $user, $pass, $db) or die(mysql_error());
+
+$sql = "SELECT title FROM films";
 
 $result = mysqli_query($conn, $sql);
 
+//while ($row = $result->fetch_assoc()) {
+//	foreach ($row as $title) {
+		//echo $title . "\n";
+//	}
+//}
 ?>
 
 <html>
@@ -44,10 +69,14 @@ $result = mysqli_query($conn, $sql);
           display: block;
           font-family: arial black;
       }
+  
   </style>
 <body>
     <phph1><?php echo $genre ?></h1>
-    <phpp>To be filled out once we have data. :)</p>
+    <phpp><?php echo $trailer?></p>
+    <phpp><?php echo $poster?></p>
+    <phpp><?php echo $rating?></p>
+    <phpp><?php echo $description?></p>
 </body>
 </html>
 

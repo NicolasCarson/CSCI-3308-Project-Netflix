@@ -24,10 +24,11 @@
 				<h2>Select A Genre</h2>
 
 				<form action="results.php" method="post">
-				    <button name="Genre" type=submit value="Action">Action & Adventure</button>
-				    <button name="Genre" type=submit value="Documentary">Documentary</button>
-				    <button name="Genre" type=submit value="Comedy">Comedy</button>
-				    <button name="Genre" type=submit value="Romantic">Romantic Comedy</button>
+				    <input type="checkbox" name="genre[]" value="1"/>Action & Adventure</br>
+				    <input type="checkbox" name="genre[]" value="2"/>Documentary</br>
+				    <input type="checkbox" name="genre[]" value="3"/>Comedy</br>
+				    <input type="checkbox" name="genre[]" value="4"/>Romantic Comedy</br>
+					<input type="submit" name="formSubmit" value="Submit" />
 				</form>
 
 				<div id="left"></div>
