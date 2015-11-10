@@ -58,17 +58,18 @@ for($i=0; $i < $N; $i++)
           padding-right: 10px;
      }
      h1{
-          margin-left: 400 px;
+          
           color: red;
           font-family: arial black;
           display: block;
           font-size: 40px;
-          padding-left: 20px;
+          padding-left: 30px;
           padding-right: 10px;
           perspective: 100px;
           perspective-origin: 50% 0;
           transform-origin: 0 0;
           transform: scaleX(80) rotateY(89.5deg);
+          
       }
      p{
           color: white;
@@ -76,29 +77,22 @@ for($i=0; $i < $N; $i++)
           display: block;
           font-family: arial black;
       }
-      description{
-          color:white;
-          font-size: 12px;
-          display: block;
-          font-family: arial;
-          margin-right: 200px;
-          position: relative;
-      float: right;
-
-      }
-      poster{
+      poster img{
           padding-left: 20px;
-          padding-right: 10px;
+          padding-right: 2px;
           padding-bottom: 5px;
-          padding-top:20px;
+          float: left;
+          width:40%;
       }
       rating{
           color:white;
           font-size: 14px;
-          display: block;
-          font-family: arial black;
+          
+          width: 40%;
+          font-family: arial;
           position: relative;
-          float: right;
+          float:left ;
+          padding-left:20px;
       }
     </style>
 <body>
@@ -106,14 +100,11 @@ for($i=0; $i < $N; $i++)
        <?php echo $genre ?>
      </head>
      <h1><?php echo $title?></h1>
-    
-     <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster" height="300"></poster>
-     <rating>IMDB rating: <?php echo $rating?>/10</rating>
-     <description><?php echo $description?></description>
-     <iframe width="420" height="315"
-     src="<?php echo $trailer?>">
-     </iframe>
-     
+     <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster"></poster>
+     <rating><strong>IMDB rating: <?php echo $rating?>/10</strong><br><?php echo $description?></rating>
+     <iframe title="YouTube video player" class="youtube-player" type="text/html" 
+          width="640" height="390" src="<?php echo $trailer?>"
+          frameborder="0" allowFullScreen></iframe>
 <?php
 }
 ?>
