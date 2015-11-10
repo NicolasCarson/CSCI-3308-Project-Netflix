@@ -4,7 +4,6 @@ body{
     background-color: #141414;
     margin:0;
     padding:0;
-    height:100%;
     color: red;
 }
 
@@ -27,7 +26,6 @@ header {
     padding-right: 10px;
     font-size: 40px;
     font-family: arial black;
-    display: block;
 }
 
 
@@ -38,7 +36,7 @@ header {
 }
 
 #top, #bottom, #left, #right {
-	background: red;
+	background: #3D3737;
 	position: fixed;
 	}
 	#left, #right {
