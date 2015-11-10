@@ -5,52 +5,29 @@
 	<title>3 Column Layout</title>
 	<link rel="stylesheet" href="stylesheets/index.css" type="text/css" />
 </head>
-
 <body>
-	
 	<div id="wrapper">
 		<div id="header">
 			<header id="header"><p>Netflix Movie Generator</p></header>
 		</div>
-	    
-	    <div id="content">
-			<div id="container">
-				<main id="center" class="column">
-					<article>
-						<h1>Let us pick a movie for you!</h1>
-					</article>								
-				</main>
-				<h2>Select A Genre</h2>
+	<h1>Let us pick a movie for you!</h1>
+	<h2>Select one or more genres</h2>
 
-				<form action="results.php" method="post">
-				    <input type="checkbox" name="genre[]" value="1"/>Action & Adventure</br>
-				    <input type="checkbox" name="genre[]" value="2"/>Anime</br>
-				    <input type="checkbox" name="genre[]" value="3"/>Children & Family</br>
-				    <input type="checkbox" name="genre[]" value="4"/>Classic</br>
-				    <input type="checkbox" name="genre[]" value="5"/>Comedy</br>
-				    <input type="checkbox" name="genre[]" value="6"/>Romantic Comedy</br>
-				    <input type="checkbox" name="genre[]" value="7"/>Dark Comedy</br>
-				    <input type="checkbox" name="genre[]" value="8"/>Drama</br>
-				    <input type="checkbox" name="genre[]" value="9"/>Horror</br>
-				    <input type="checkbox" name="genre[]" value="10"/>Independant</br>
-				    <input type="checkbox" name="genre[]" value="11"/>International</br>
-				    <input type="checkbox" name="genre[]" value="12"/>Music</br>
-				    <input type="checkbox" name="genre[]" value="13"/>Romantic</br>
-				    <input type="checkbox" name="genre[]" value="14"/>Sci-Fi & Fantasy</br>
-				    <input type="checkbox" name="genre[]" value="15"/>Sports</br>
-				    <input type="checkbox" name="genre[]" value="16"/>Thriller</br>
-					<input type="submit" name="formSubmit" value="Submit" />
-				</form>
-
-				<div id="left"></div>
-				<div id="right"></div>
-				<div id="top"></div>
-				<div id="bottom"></div>
-	        </div>	    	
-	    </div>
-	    <div id="footer">
-	    	<footer id="footer"><p>Footer...</p></footer>
-	    </div>
-	</div>
+		<form action="results.php" method="post">
+		    <input type="checkbox" name="genre[]" value="1"/>Action & Adventure</br>
+		    <input type="checkbox" name="genre[]" value="2"/>Anime</br>
+		    <input type="checkbox" name="genre[]" value="3"/>Children & Family</br>
+		    <input type="checkbox" name="genre[]" value="4"/>Classic</br>
+		    <input type="checkbox" name="genre[]" value="5"/>Comedy</br>
+		    <input type="checkbox" name="genre[]" value="6"/>Romantic Comedy</br>
+		    <input type="checkbox" name="genre[]" value="7"/>Classic</br>
+			<input type="submit" name="formSubmit" value="Submit" />
+		</form>
+		<div id="left"></div>
+		<div id="right"></div>
+		<div id="top"></div>
+		<div id="bottom"></div>
+	       	
+	 </div>
 </body>
 </html>

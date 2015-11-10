@@ -1,9 +1,3 @@
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="stylesheets/results.css" type="text/css" />
-</head>
-<body>
 <?php
 $host = "127.0.0.1";
 $user = "root";                    
@@ -18,14 +12,7 @@ if(empty($aGenre))
 else
 {
      $N = count($aGenre);
-     
-#     echo("You selected $N genres(s): ");
-#     for($i=0; $i < $N; $i++)
-#     {
-#          echo($aGenre[$i] . " ");
-#     }
 }
-
 //title trailer poster rating description
 $conn = mysqli_connect($host, $user, $pass, $db) or die(mysql_error());
 
@@ -47,20 +34,77 @@ for($i=0; $i < $N; $i++)
      $film_details = mysqli_query($conn, $sql);
      mysqli_data_seek($film_details, 0);
      $row = mysqli_fetch_assoc($film_details);
+     $title = $row['title'];
      $trailer = $row['trailer'];
      $poster = $row['poster'];
      $rating = $row['rating'];
      $description = $row['description'];
 ?>
-     
 
-    <h1><?php echo $genre ?></h1>
-    <p><?php echo $trailer?></p>
-    <p><?php echo $poster?></p>
-    <p><?php echo $rating?></p>
-    <p><?php echo $description?></p>
-
-
+<html>
+<style type="text/css">
+     body{
+          background-color: #141414;
+          margin:0;
+          padding:0;
+          height:100%;
+     }
+     head{
+          color:white;
+          font-size: 14px;
+          display: block;
+          font-family: arial black;
+          padding-left: 20px;
+          padding-right: 10px;
+     }
+     h1{
+          
+          color: red;
+          font-family: arial black;
+          display: block;
+          font-size: 40px;
+          padding-left: 30px;
+          padding-right: 10px;
+          perspective: 100px;
+          perspective-origin: 50% 0;
+          transform-origin: 0 0;
+          transform: scaleX(80) rotateY(89.5deg);
+          
+      }
+     p{
+          color: white;
+          font-size: 20px;
+          display: block;
+          font-family: arial black;
+      }
+      poster img{
+          padding-left: 20px;
+          padding-right: 2px;
+          padding-bottom: 5px;
+          float: left;
+          width:40%;
+      }
+      rating{
+          color:white;
+          font-size: 14px;
+          
+          width: 40%;
+          font-family: arial;
+          position: relative;
+          float:left ;
+          padding-left:20px;
+      }
+    </style>
+<body>
+     <head>
+       <?php echo $genre ?>
+     </head>
+     <h1><?php echo $title?></h1>
+     <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster"></poster>
+     <rating><strong>IMDB rating: <?php echo $rating?>/10</strong><br><?php echo $description?></rating>
+     <iframe title="YouTube video player" class="youtube-player" type="text/html" 
+          width="640" height="390" src="<?php echo $trailer?>"
+          frameborder="0" allowFullScreen></iframe>
 <?php
 }
 ?>
