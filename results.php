@@ -1,33 +1,9 @@
 <html>
-<style type="text/css">
-     body{
-          background-color: #141414;
-          margin:0;
-          padding:0;
-          height:100%;
-     }
-     h1{
-          color: red;
-          font-family: arial black;
-          display: block;
-          font-size: 40px;
-          padding-left: 20px;
-          padding-right: 10px;
-          perspective: 100px;
-          perspective-origin: 50% 0;
-          transform-origin: 0 0;
-          transform: scaleX(80) rotateY(89.5deg);
-      }
-      p{
-          color: red;
-          font-size: 20px;
-          display: block;
-          font-family: arial black;
-      }
-  
-  </style>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="stylesheets/results.css" type="text/css" />
+</head>
 <body>
-
 <?php
 $host = "127.0.0.1";
 $user = "root";                    
@@ -88,7 +64,5 @@ for($i=0; $i < $N; $i++)
 <?php
 }
 ?>
-
 </body>
 </html>
-
