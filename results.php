@@ -38,6 +38,11 @@ for($i=0; $i < $N; $i++)
      $trailer = $row['trailer'];
      $poster = $row['poster'];
      $rating = $row['rating'];
+     if($rating < 0.0) {
+         $rating = "Not Available";
+     } else {
+         $rating = (string)$rating . " / 10";
+     }
      $description = $row['description'];
 }
 ?>
@@ -101,7 +106,7 @@ for($i=0; $i < $N; $i++)
     <body>
          <h1><?php echo $title?></h1>
          <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster"></poster>
-         <rating><strong>IMDB rating: <?php echo $rating?>/10</strong><br><?php echo $description?></rating>
+         <rating><strong>IMDB rating: <?php echo $rating?></strong><br><?php echo $description?></rating>
          <iframe title="YouTube video player" class="youtube-player" type="text/html" 
               width="640" height="390" src="<?php echo $trailer?>"
               frameborder="0" allowFullScreen></iframe>
