@@ -126,7 +126,7 @@ for($i=0; $i < $N; $i++)
          <rating><strong>IMDB rating: <?php echo $rating?></strong></rating>
          <description><strong> Summary: <?php echo $description?></strong></description>
          <iframe title="YouTube video player" class="youtube-player" type="text/html" 
-              width="640" height="390" src="<?php echo $trailer?>"
+              width="640" height="170" src="<?php echo $trailer?>"
               frameborder="0" allowFullScreen></iframe>
     </body>
 
