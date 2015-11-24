@@ -50,9 +50,8 @@ for($i=0; $i < $N; $i++)
      }
      $description = $row['description'];
 ?>
-    <head>
-        <?php echo $genre?>
-    </head>
+
+
     <style type="text/css">
          body{
               background-color: #141414;
@@ -60,18 +59,10 @@ for($i=0; $i < $N; $i++)
               padding:0;
               height:100%;
          }
-         head{
-              color:white;
-              font-size: 14px;
-              display: block;
-              font-family: arial black;
-              padding-left: 20px;
-              padding-right: 10px;
-         }
+        
          h1{
-              
               color: red;
-              font-family: arial black;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
               display: block;
               font-size: 40px;
               padding-left: 30px;
@@ -80,14 +71,15 @@ for($i=0; $i < $N; $i++)
               perspective-origin: 50% 0;
               transform-origin: 0 0;
               transform: scaleX(80) rotateY(89.5deg);
-              
           }
+          
          p{
               color: white;
               font-size: 20px;
               display: block;
-              font-family: arial black;
+              font-family: arial;
           }
+          
           poster img{
               padding-left: 20px;
               padding-right: 2px;
@@ -95,21 +87,44 @@ for($i=0; $i < $N; $i++)
               float: left;
               width:40%;
           }
-          rating{
+          
+          genre{
               color:white;
-              font-size: 14px;
-              
+              font-size: 16px;
               width: 40%;
-              font-family: arial;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
               position: relative;
               float:left ;
               padding-left:20px;
           }
+          
+          rating{
+              color:red;
+              font-size: 16px;
+              width: 40%;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              position: relative;
+              float:left ;
+              padding-left:20px;
+          }
+          
+          description{
+              color:white;
+              font-size: 16px;
+              width: 40%;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              position: relative;
+              float:left ;
+              padding-left:20px;
+          }
+          
         </style>
     <body>
          <h1><?php echo $title?></h1>
          <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster"></poster>
-         <rating><strong>IMDB rating: <?php echo $rating?></strong><br><?php echo $description?></rating>
+         <genre>Genre: <?php echo $genre?></genre>
+         <rating><strong>IMDB rating: <?php echo $rating?></strong></rating>
+         <description><strong> Summary: <?php echo $description?></strong></description>
          <iframe title="YouTube video player" class="youtube-player" type="text/html" 
               width="640" height="390" src="<?php echo $trailer?>"
               frameborder="0" allowFullScreen></iframe>
