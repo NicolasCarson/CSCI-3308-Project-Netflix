@@ -16,6 +16,11 @@ else
 //title trailer poster rating description
 $conn = mysqli_connect($host, $user, $pass, $db) or die(mysql_error());
 
+?>
+
+<html>
+
+<?php
 for($i=0; $i < $N; $i++)
 {
      $sql = "SELECT filmID FROM films_genres WHERE genreID=$aGenre[$i]";
@@ -44,9 +49,7 @@ for($i=0; $i < $N; $i++)
          $rating = (string)$rating . " / 10";
      }
      $description = $row['description'];
-}
 ?>
-<html>
     <head>
         <?php echo $genre?>
     </head>
@@ -111,4 +114,8 @@ for($i=0; $i < $N; $i++)
               width="640" height="390" src="<?php echo $trailer?>"
               frameborder="0" allowFullScreen></iframe>
     </body>
+
+<?php
+}
+?>
 </html>
