@@ -50,7 +50,6 @@ for($i=0; $i < $N; $i++)
      }
      $description = $row['description'];
      $trailer = str_replace("watch?v=", "embed/", $trailer);
-     $trailer2="https://www.youtube.com/watch?v=1rolBdc_mjs";
 ?>
 
    <head>
@@ -133,6 +132,7 @@ for($i=0; $i < $N; $i++)
               padding-top:40px;
               padding-right:25%;
           }
+          
         </style>
     <body>
          <h1><?php echo $title?></h1>
@@ -140,7 +140,13 @@ for($i=0; $i < $N; $i++)
          <genre><i>Genre: </i> <?php echo $genre?><br/></genre>
          <rating><i>IMDB rating: </i><?php echo $rating?></rating>
          <description><i>Summary:</i> <?php echo $description?></description>
+         
+         <?php    if("$trailer" !== "NULL") { ?>
          <iframe height="310" src="<?php echo $trailer?>" frameborder="0" allowfullscreen></iframe>
+         <?php } else { ?>
+         <trailer>Trailer not available</trailer>
+         <?php } ?>
+         
          <span style="padding-left:100%"/>
     </body>
 
