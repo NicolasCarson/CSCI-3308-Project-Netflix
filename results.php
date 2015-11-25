@@ -85,7 +85,7 @@ for($i=0; $i < $N; $i++)
               padding-right: 2px;
               padding-bottom: 5px;
               float: left;
-              width:40%;
+              width:30%;
           }
           
           genre{
@@ -94,8 +94,9 @@ for($i=0; $i < $N; $i++)
               width: 40%;
               font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
               position: relative;
-              float:left ;
+              float:right ;
               padding-left:20px;
+              padding-right:25%;
           }
           
           rating{
@@ -104,8 +105,9 @@ for($i=0; $i < $N; $i++)
               width: 40%;
               font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
               position: relative;
-              float:left ;
+              float:right ;
               padding-left:20px;
+              padding-right:25%;
           }
           
           description{
@@ -114,20 +116,24 @@ for($i=0; $i < $N; $i++)
               width: 40%;
               font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
               position: relative;
-              float:left ;
+              float:right;
               padding-left:20px;
+              padding-right:25%;
           }
           
         </style>
     <body>
          <h1><?php echo $title?></h1>
-         <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster"></poster>
-         <genre>Genre: <?php echo $genre?></genre>
-         <rating><strong>IMDB rating: <?php echo $rating?></strong></rating>
-         <description><strong> Summary: <?php echo $description?></strong></description>
-         <iframe title="YouTube video player" class="youtube-player" type="text/html" 
+         <poster><img src="<?php echo $poster?>"></poster>
+         <genre><i>Genre: </i> <?php echo $genre?><br/></genre>
+         <rating><i>IMDB rating: </i><?php echo $rating?></rating>
+         <description><i>Summary:</i> <?php echo $description?></description>
+<?php   if(!empty($trailer)) { ?>
+        <iframe title="YouTube video player" class="youtube-player" type="text/html" 
               width="640" height="170" src="<?php echo $trailer?>"
               frameborder="0" allowFullScreen></iframe>
+<?php } ?>
+         <iframe type="text/html" width="100%" height="70px" frameborder="0"></iframe>
     </body>
 
 <?php
