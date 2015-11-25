@@ -51,7 +51,9 @@ for($i=0; $i < $N; $i++)
      $description = $row['description'];
 ?>
 
-
+   <head>
+   <meta charset="UTF-8">
+   </head> 
     <style type="text/css">
          body{
               background-color: #141414;
@@ -133,7 +135,7 @@ for($i=0; $i < $N; $i++)
               width="640" height="170" src="<?php echo $trailer?>"
               frameborder="0" allowFullScreen></iframe>
 <?php } ?>
-         <iframe type="text/html" width="100%" height="70px" frameborder="0"></iframe>
+         <span style="padding-left:100%"/>
     </body>
 
 <?php
