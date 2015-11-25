@@ -144,7 +144,7 @@ for($i=0; $i < $N; $i++)
          <?php    if("$trailer" !== "NULL") { ?>
          <iframe height="310" src="<?php echo $trailer?>" frameborder="0" allowfullscreen></iframe>
          <?php } else { ?>
-         <trailer>Trailer not available</trailer>
+         <rating>Trailer not available</rating>
          <?php } ?>
          
          <span style="padding-left:100%"/>
