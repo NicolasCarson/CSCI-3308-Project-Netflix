@@ -123,15 +123,6 @@ for($i=0; $i < $N; $i++)
               padding-left:20px;
               padding-right:25%;
           }
-          NaPoster {
-              color:white;
-              font-size: 16px;
-              width: 40%;
-              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-              position: relative;
-              float:left;
-              padding-left:20px;
-          }
           
           iframe{
               width: 40%;
