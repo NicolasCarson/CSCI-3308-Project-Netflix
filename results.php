@@ -49,6 +49,8 @@ for($i=0; $i < $N; $i++)
          $rating = (string)$rating . " / 10";
      }
      $description = $row['description'];
+     $trailer = str_replace("watch?v=", "embed/", $trailer);
+     $trailer2="https://www.youtube.com/watch?v=1rolBdc_mjs";
 ?>
 
    <head>
@@ -123,6 +125,14 @@ for($i=0; $i < $N; $i++)
               padding-right:25%;
           }
           
+          iframe{
+              width: 40%;
+              position: relative;
+              float:right;
+              padding-left:20px;
+              padding-top:40px;
+              padding-right:25%;
+          }
         </style>
     <body>
          <h1><?php echo $title?></h1>
@@ -130,11 +140,7 @@ for($i=0; $i < $N; $i++)
          <genre><i>Genre: </i> <?php echo $genre?><br/></genre>
          <rating><i>IMDB rating: </i><?php echo $rating?></rating>
          <description><i>Summary:</i> <?php echo $description?></description>
-<?php   if(!empty($trailer)) { ?>
-        <iframe title="YouTube video player" class="youtube-player" type="text/html" 
-              width="640" height="170" src="<?php echo $trailer?>"
-              frameborder="0" allowFullScreen></iframe>
-<?php } ?>
+         <iframe height="310" src="<?php echo $trailer?>" frameborder="0" allowfullscreen></iframe>
          <span style="padding-left:100%"/>
     </body>
 
