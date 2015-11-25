@@ -123,6 +123,15 @@ for($i=0; $i < $N; $i++)
               padding-left:20px;
               padding-right:25%;
           }
+          NaPoster {
+              color:white;
+              font-size: 16px;
+              width: 40%;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              position: relative;
+              float:left;
+              padding-left:20px;
+          }
           
           iframe{
               width: 40%;
@@ -136,7 +145,11 @@ for($i=0; $i < $N; $i++)
         </style>
     <body>
          <h1><?php echo $title?></h1>
-         <poster><img src="<?php echo $poster?>"></poster>
+          <?php    if("$poster" !== "NULL") { ?>
+                <poster><img src="<?php echo $poster?>"></poster>
+          <?php } else { ?>
+                <poster><img src="notAvailable.jpg"></poster>
+         <?php } ?>
          <genre><i>Genre: </i> <?php echo $genre?><br/></genre>
          <rating><i>IMDB rating: </i><?php echo $rating?></rating>
          <description><i>Summary:</i> <?php echo $description?></description>
