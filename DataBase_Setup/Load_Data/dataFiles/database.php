@@ -109,7 +109,7 @@ class Database {
     public function connect() {
         # Enter database information to establish connection
         $host  = 'localhost';
-        $user  = '';
+        $user  = 'root';
         $db    = 'Netflix';
         $pswrd = '';
 

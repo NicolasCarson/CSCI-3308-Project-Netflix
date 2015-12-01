@@ -45,6 +45,7 @@ for($i=0; $i < $N; $i++)
      $poster = $row['poster'];
      $rating = $row['rating'];
      $description = $row['description'];
+}
 ?>
 
 <html>
