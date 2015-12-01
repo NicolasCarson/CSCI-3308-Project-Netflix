@@ -1,9 +1,3 @@
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="stylesheets/results.css" type="text/css" />
-</head>
-<body>
 <?php
 $host = "127.0.0.1";
 $user = "root";                    
@@ -22,6 +16,11 @@ else
 //title trailer poster rating description
 $conn = mysqli_connect($host, $user, $pass, $db) or die(mysql_error());
 
+?>
+
+<html>
+
+<?php
 for($i=0; $i < $N; $i++)
 {
      $sql = "SELECT filmID FROM films_genres WHERE genreID=$aGenre[$i]";
@@ -44,73 +43,122 @@ for($i=0; $i < $N; $i++)
      $trailer = $row['trailer'];
      $poster = $row['poster'];
      $rating = $row['rating'];
+     if($rating < 0.0) {
+         $rating = "Not Available";
+     } else {
+         $rating = (string)$rating . " / 10";
+     }
      $description = $row['description'];
+<<<<<<< HEAD
 }
+=======
+     $trailer = str_replace("watch?v=", "embed/", $trailer);
+>>>>>>> c5be4d8bdea8d89ded34bb46ba4fe1813ab118a7
 ?>
 
-<html>
-<style type="text/css">
-     body{
-          background-color: #141414;
-          margin:0;
-          padding:0;
-          height:100%;
-     }
-     head{
-          color:white;
-          font-size: 14px;
-          display: block;
-          font-family: arial black;
-          padding-left: 20px;
-          padding-right: 10px;
-     }
-     h1{
+   <head>
+   <meta charset="UTF-8">
+   </head> 
+    <style type="text/css">
+         body{
+              background-color: #141414;
+              margin:0;
+              padding:0;
+              height:100%;
+         }
+        
+         h1{
+              color: red;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              display: block;
+              font-size: 40px;
+              padding-left: 30px;
+              padding-right: 10px;
+              perspective: 100px;
+              perspective-origin: 50% 0;
+              transform-origin: 0 0;
+              transform: scaleX(80) rotateY(89.5deg);
+          }
           
-          color: red;
-          font-family: arial black;
-          display: block;
-          font-size: 40px;
-          padding-left: 30px;
-          padding-right: 10px;
-          perspective: 100px;
-          perspective-origin: 50% 0;
-          transform-origin: 0 0;
-          transform: scaleX(80) rotateY(89.5deg);
+         p{
+              color: white;
+              font-size: 20px;
+              display: block;
+              font-family: arial;
+          }
           
-      }
-     p{
-          color: white;
-          font-size: 20px;
-          display: block;
-          font-family: arial black;
-      }
-      poster img{
-          padding-left: 20px;
-          padding-right: 2px;
-          padding-bottom: 5px;
-          float: left;
-          width:40%;
-      }
-      rating{
-          color:white;
-          font-size: 14px;
+          poster img{
+              padding-left: 20px;
+              padding-right: 2px;
+              padding-bottom: 5px;
+              float: left;
+              width:30%;
+          }
           
-          width: 40%;
-          font-family: arial;
-          position: relative;
-          float:left ;
-          padding-left:20px;
-      }
-    </style>
-<body>
-     <head>
-       <?php echo $genre ?>
-     </head>
-     <h1><?php echo $title?></h1>
-     <poster><img src="<?php echo $poster?>" alt="<?php echo $title?> poster"></poster>
-     <rating><strong>IMDB rating: <?php echo $rating?>/10</strong><br><?php echo $description?></rating>
-     <iframe title="YouTube video player" class="youtube-player" type="text/html" 
-          width="640" height="390" src="<?php echo $trailer?>"
-          frameborder="0" allowFullScreen></iframe>
-</body>
+          genre{
+              color:white;
+              font-size: 16px;
+              width: 40%;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              position: relative;
+              float:right ;
+              padding-left:20px;
+              padding-right:25%;
+          }
+          
+          rating{
+              color:red;
+              font-size: 16px;
+              width: 40%;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              position: relative;
+              float:right ;
+              padding-left:20px;
+              padding-right:25%;
+          }
+          
+          description{
+              color:white;
+              font-size: 16px;
+              width: 40%;
+              font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+              position: relative;
+              float:right;
+              padding-left:20px;
+              padding-right:25%;
+          }
+          
+          iframe{
+              width: 40%;
+              position: relative;
+              float:right;
+              padding-left:20px;
+              padding-top:40px;
+              padding-right:25%;
+          }
+          
+        </style>
+    <body>
+         <h1><?php echo $title?></h1>
+          <?php    if("$poster" !== "NULL") { ?>
+                <poster><img src="<?php echo $poster?>"></poster>
+          <?php } else { ?>
+                <poster><img src="notAvailable.jpg"></poster>
+         <?php } ?>
+         <genre><i>Genre: </i> <?php echo $genre?><br/></genre>
+         <rating><i>IMDB rating: </i><?php echo $rating?></rating>
+         <description><i>Summary:</i> <?php echo $description?></description>
+         
+         <?php    if("$trailer" !== "NULL") { ?>
+         <iframe height="310" src="<?php echo $trailer?>" frameborder="0" allowfullscreen></iframe>
+         <?php } else { ?>
+         <rating>Trailer not available</rating>
+         <?php } ?>
+         
+         <span style="padding-left:100%"/>
+    </body>
+
+<?php
+}
+?>
 </html>
