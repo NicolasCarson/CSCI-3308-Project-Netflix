@@ -1,0 +1,17 @@
+genreID	name
+1	Action & Adventure
+2	Anime
+3	Children & Family
+4	Classic
+5	Comedy
+6	Romantic Comedy
+7	Dark Comedy
+8	Drama
+9	Horror
+10	Independent
+11	International
+12	Music
+13	Romantic
+14	Sci-Fi & Fantasy
+15	Sports
+16	Thriller
