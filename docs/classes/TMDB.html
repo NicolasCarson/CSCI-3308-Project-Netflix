@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">184</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1150515962"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1150515962" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Collection.html">Collection</a></li>
+                                                    <li class="class"><a href="../classes/Database.html">Database</a></li>
+                                                    <li class="class"><a href="../classes/Episode.html">Episode</a></li>
+                                                    <li class="class"><a href="../classes/Episode.html">Episode</a></li>
+                                                    <li class="class"><a href="../classes/Movie.html">Movie</a></li>
+                                                    <li class="class"><a href="../classes/Movie.html">Movie</a></li>
+                                                    <li class="class"><a href="../classes/MovieRole.html">MovieRole</a></li>
+                                                    <li class="class"><a href="../classes/MovieRole.html">MovieRole</a></li>
+                                                    <li class="class"><a href="../classes/Person.html">Person</a></li>
+                                                    <li class="class"><a href="../classes/Person.html">Person</a></li>
+                                                    <li class="class"><a href="../classes/Role.html">Role</a></li>
+                                                    <li class="class"><a href="../classes/Role.html">Role</a></li>
+                                                    <li class="class"><a href="../classes/Season.html">Season</a></li>
+                                                    <li class="class"><a href="../classes/Season.html">Season</a></li>
+                                                    <li class="class"><a href="../classes/TestDatabase.html">TestDatabase</a></li>
+                                                    <li class="class"><a href="../classes/TMDB.html">TMDB</a></li>
+                                                    <li class="class"><a href="../classes/TVShow.html">TVShow</a></li>
+                                                    <li class="class"><a href="../classes/TVShow.html">TVShow</a></li>
+                                                    <li class="class"><a href="../classes/TVShowRole.html">TVShowRole</a></li>
+                                                    <li class="class"><a href="../classes/TVShowRole.html">TVShowRole</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>TMDB</h1>
+                    <p><em></em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/TMDB.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_setLang" class="">setLang()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getLang" class="">getLang()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getConfig" class="">getConfig()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getImageURL" class="">getImageURL()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getMovieInfo" class="deprecated">getMovieInfo()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getDiscoverMovie" class="">getDiscoverMovie()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getLatestMovie" class="">getLatestMovie()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_nowPlayingMovies" class="">nowPlayingMovies()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_topRatedMovies" class="">topRatedMovies()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_upcomingMovies" class="">upcomingMovies()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getLatestPerson" class="">getLatestPerson()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getPopularPersons" class="">getPopularPersons()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getMovie" class="">getMovie()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getTVShow" class="">getTVShow()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getSeason" class="">getSeason()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getEpisode" class="">getEpisode()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getPerson" class="">getPerson()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getCollection" class="">getCollection()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_searchMovie" class="">searchMovie()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_searchTVShow" class="">searchTVShow()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_searchPerson" class="">searchPerson()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_searchCollection" class="">searchCollection()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/TMDB.html#constant__API_URL_" class="">_API_URL_</a><br />
+                                                                    <a href="../classes/TMDB.html#constant_VERSION" class="">VERSION</a><br />
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/TMDB.html#method_setApikey" class="">setApikey()</a><br />
+                                                                    <a href="../classes/TMDB.html#method_getApikey" class="">getApikey()</a><br />
+                                                                    <a href="../classes/TMDB.html#method__loadConfig" class="">_loadConfig()</a><br />
+                                                                    <a href="../classes/TMDB.html#method__call" class="">_call()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/TMDB.html#property__apikey" class="">$_apikey</a><br />
+                                                                    <a href="../classes/TMDB.html#property__lang" class="">$_lang</a><br />
+                                                                    <a href="../classes/TMDB.html#property__config" class="">$_config</a><br />
+                                                                    <a href="../classes/TMDB.html#property__debug" class="">$_debug</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/DataBase_Setup.Get_Data.modified-tmdb-php-api.tmdb-api.html"><div class="path-wrapper">DataBase_Setup/Get_Data/modified-tmdb-php-api/tmdb-api.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\TMDB</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                                    <a id="constants" name="constants"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Constants</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant__API_URL_" name="constant__API_URL_" class="anchor"></a>
+            <article id="constant__API_URL_" class="constant">
+                <h3 class="">_API_URL_</h3>
+                <pre class="signature">_API_URL_</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_VERSION" name="constant_VERSION" class="anchor"></a>
+            <article id="constant_VERSION" class="constant">
+                <h3 class="">VERSION</h3>
+                <pre class="signature">VERSION</pre>
+                <p><em></em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__apikey" name="property__apikey" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_apikey</h3>
+                <pre class="signature">$_apikey : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__lang" name="property__lang" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_lang</h3>
+                <pre class="signature">$_lang : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__config" name="property__config" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_config</h3>
+                <pre class="signature">$_config : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__debug" name="property__debug" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$_debug</h3>
+                <pre class="signature">$_debug : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$apikey</span>, string  <span class="argument">$lang = &#039;en&#039;</span>,   <span class="argument">$debug = false</span>) </pre>
+                <p><em>Construct Class</em></p>
+                <p>@param string $apikey The API key token</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$apikey </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$lang </td>
+                                <td><p>The languaje to work with, default is english</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$debug </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLang" name="method_setLang" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setLang()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLang(  <span class="argument">$lang = &#039;en&#039;</span>) </pre>
+                <p><em>Set the language
+By default english</em></p>
+                <p>@param string $lang</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$lang </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLang" name="method_getLang" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLang()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLang() </pre>
+                <p><em>Get the language</em></p>
+                <p>@return string</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getConfig" name="method_getConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getConfig() </pre>
+                <p><em>Get Configuration of the API (Revisar)</em></p>
+                <p>@return array</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getImageURL" name="method_getImageURL" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getImageURL()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getImageURL(  <span class="argument">$size = &#039;original&#039;</span>) : string</pre>
+                <p><em>Get the URL images
+	You can specify the width, by default original</em></p>
+                <p>@param String $size A String like 'w185' where you specify the image width</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$size </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMovieInfo" name="method_getMovieInfo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public deprecated">getMovieInfo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMovieInfo(  <span class="argument">$idMovie</span>, string  <span class="argument">$option = &#039;&#039;</span>,   <span class="argument">$append_request = &#039;&#039;</span>) </pre>
+                <p><em>Get Movie Info
+	Gets part of the info of the Movie, mostly used for the lazy load</em></p>
+                <p>@param int $idMovie The Movie id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idMovie </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$option </td>
+                                <td><p>The request option
+@param string $append_request additional request
+@return array</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$append_request </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                                <aside class="alert alert-block alert-error">
+                    <h4>Deprecated</h4>
+                    
+                </aside>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDiscoverMovie" name="method_getDiscoverMovie" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDiscoverMovie()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDiscoverMovie(  <span class="argument">$page = 1</span>) </pre>
+                <p><em>Get latest Movie</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$page </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            add
+                        </th>
+                        <td>
+                                                                                            <p>by tnsws</p>
+<pre><code>@return Movie</code></pre>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLatestMovie" name="method_getLatestMovie" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLatestMovie()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLatestMovie() </pre>
+                <p><em>Get latest Movie</em></p>
+                <p>@return Movie</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_nowPlayingMovies" name="method_nowPlayingMovies" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">nowPlayingMovies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">nowPlayingMovies(  <span class="argument">$page = 1</span>) : array</pre>
+                <p><em>Now Playing Movies</em></p>
+                <p>@param integer $page</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$page </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_topRatedMovies" name="method_topRatedMovies" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">topRatedMovies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">topRatedMovies(  <span class="argument">$page = 1</span>) </pre>
+                <p><em>Top Rated Movies</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$page </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            add
+                        </th>
+                        <td>
+                                                                                            <p>by tnsws</p>
+<pre><code>@param integer $page
+@return array</code></pre>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_upcomingMovies" name="method_upcomingMovies" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">upcomingMovies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">upcomingMovies(  <span class="argument">$page = 1</span>) </pre>
+                <p><em>Upcoming Movies</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$page </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            add
+                        </th>
+                        <td>
+                                                                                            <p>by tnsws</p>
+<pre><code>@param integer $page
+@return array</code></pre>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLatestPerson" name="method_getLatestPerson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLatestPerson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLatestPerson() </pre>
+                <p><em>Get latest Person</em></p>
+                <p>@return Person</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPopularPersons" name="method_getPopularPersons" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPopularPersons()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPopularPersons(  <span class="argument">$page = 1</span>) </pre>
+                <p><em>Get Popular Persons</em></p>
+                <p>@return Person[]</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$page </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMovie" name="method_getMovie" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMovie()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMovie(  <span class="argument">$idMovie</span>, string  <span class="argument">$appendToResponse = &#039;append_to_response=trailers,images,casts,translations&#039;</span>) </pre>
+                <p><em>Get a Movie</em></p>
+                <p>@param int $idMovie The Movie id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idMovie </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$appendToResponse </td>
+                                <td><p>The extra append of the request, by default all
+@return Movie</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTVShow" name="method_getTVShow" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTVShow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTVShow(  <span class="argument">$idTVShow</span>, string  <span class="argument">$appendToResponse = &#039;append_to_response=trailers,images,casts,translations,keywords&#039;</span>) </pre>
+                <p><em>Get a TVShow</em></p>
+                <p>@param int $idTVShow The TVShow id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idTVShow </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$appendToResponse </td>
+                                <td><p>The extra append of the request, by default all
+@return TVShow</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSeason" name="method_getSeason" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSeason()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSeason(  <span class="argument">$idTVShow</span>, integer  <span class="argument">$numSeason</span>,   <span class="argument">$appendToResponse = &#039;append_to_response=trailers,images,casts,translations&#039;</span>) </pre>
+                <p><em>Get a Season</em></p>
+                <p>@param int $idTVShow The TVShow id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idTVShow </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$numSeason </td>
+                                <td><p>The Season number
+@param string $appendToResponse The extra append of the request, by default all
+@return Season</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$appendToResponse </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getEpisode" name="method_getEpisode" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getEpisode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getEpisode(  <span class="argument">$idTVShow</span>, integer  <span class="argument">$numSeason</span>,   <span class="argument">$numEpisode</span>,   <span class="argument">$appendToResponse = &#039;append_to_response=trailers,images,casts,translations&#039;</span>) </pre>
+                <p><em>Get a Episode</em></p>
+                <p>@param int $idTVShow The TVShow id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idTVShow </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$numSeason </td>
+                                <td><p>The Season number
+@param int $numEpisode the Episode number
+@param string $appendToResponse The extra append of the request, by default all
+@return Episode</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$numEpisode </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$appendToResponse </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPerson" name="method_getPerson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPerson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPerson(  <span class="argument">$idPerson</span>, string  <span class="argument">$appendToResponse = &#039;append_to_response=tv_credits,movie_credits&#039;</span>) </pre>
+                <p><em>Get a Person</em></p>
+                <p>@param int $idPerson The Person id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idPerson </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$appendToResponse </td>
+                                <td><p>The extra append of the request, by default all
+@return Person</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCollection" name="method_getCollection" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCollection()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCollection(  <span class="argument">$idCollection</span>, string  <span class="argument">$appendToResponse = &#039;append_to_response=images&#039;</span>) </pre>
+                <p><em>Get a Collection</em></p>
+                <p>@param int $idCollection The Person id</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idCollection </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$appendToResponse </td>
+                                <td><p>The extra append of the request, by default all
+@return Collection</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_searchMovie" name="method_searchMovie" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">searchMovie()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">searchMovie(  <span class="argument">$movieTitle</span>) : array&lt;mixed,\Movie&gt;</pre>
+                <p><em>Search Movie</em></p>
+                <p>@param string $movieTitle The title of a Movie</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$movieTitle </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/Movie.html">\Movie</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_searchTVShow" name="method_searchTVShow" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">searchTVShow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">searchTVShow(  <span class="argument">$tvShowTitle</span>) : array&lt;mixed,\TVShow&gt;</pre>
+                <p><em>Search TVShow</em></p>
+                <p>@param string $tvShowTitle The title of a TVShow</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$tvShowTitle </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/TVShow.html">\TVShow</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_searchPerson" name="method_searchPerson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">searchPerson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">searchPerson(  <span class="argument">$personName</span>) : array&lt;mixed,\Person&gt;</pre>
+                <p><em>Search Person</em></p>
+                <p>@param string $personName The name of the Person</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$personName </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/Person.html">\Person</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_searchCollection" name="method_searchCollection" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">searchCollection()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">searchCollection(  <span class="argument">$collectionName</span>) : array&lt;mixed,\Collection&gt;</pre>
+                <p><em>Search Collection</em></p>
+                <p>@param string $collectionName The name of the Collection</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$collectionName </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,<a href="../classes/Collection.html">\Collection</a>&gt;
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setApikey" name="method_setApikey" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setApikey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setApikey(  <span class="argument">$apikey</span>) : void</pre>
+                <p><em>Set the API key</em></p>
+                <p>@param string $apikey</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$apikey </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getApikey" name="method_getApikey" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getApikey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getApikey() </pre>
+                <p><em>Get the API key</em></p>
+                <p>@return string</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__loadConfig" name="method__loadConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">_loadConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_loadConfig() </pre>
+                <p><em>Loads the configuration of the API</em></p>
+                <p>@return boolean</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__call" name="method__call" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">_call()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_call(  <span class="argument">$action</span>, string  <span class="argument">$appendToResponse</span>) </pre>
+                <p><em>Makes the call to the API and retrieves the data as a JSON</em></p>
+                <p>@param string $action   API specific function name for in the URL</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$action </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$appendToResponse </td>
+                                <td><p>The extra append of the request
+@return string</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">tmdb-api.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/DataBase_Setup/Get_Data/modified-tmdb-php-api/tmdb-api.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /Users/maryam/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+December 6th, 2015 at 10:02.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
