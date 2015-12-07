@@ -1,4 +1,4 @@
-PHPDOcumentor Usage
+PHPDocumentor Usage
 
 First Install PHP Documentor:
 
