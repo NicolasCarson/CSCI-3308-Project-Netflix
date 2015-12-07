@@ -14,5 +14,5 @@ Recommended Films are displayed on results page
 
 # Auto Generated Docs
 
-![Auto Docs](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/docs)
+[Auto Docs](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/docs)
 
