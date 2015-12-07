@@ -12,6 +12,10 @@ Recommended Films are displayed on results page
 
 ![Select Genre(s)](https://github.com/MattUhlar/screenshots/blob/master/Results_page)
 
+# Video Demo
+
+![test](https://github.com/Clacious/screenshots/tree/master/NetflixFullDemo.webm)
+
 # Auto Generated Docs
 
 [Auto Docs](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/docs)
