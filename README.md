@@ -13,7 +13,8 @@ Recommended Films are displayed on results page
 ![Select Genre(s)](https://github.com/MattUhlar/screenshots/blob/master/Results_page)
 
 # Video Demo
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://github.com/MattUhlar/screenshots/blob/master/NetflixFullDemo.webm)
+
+[Vide Demo](https://www.youtube.com/watch?v=D-wpzfT2lAw&feature=youtu.be)
 
 # Auto Generated Docs
 
