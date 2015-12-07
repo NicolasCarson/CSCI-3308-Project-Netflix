@@ -1,3 +1,7 @@
-# CSCI_3308_Project_Netflix
-Website for generating Netflix content
+# Project Netflix
+
+Website for generating Netflix content based on user preferences
+
+# How To Use 
+
 
