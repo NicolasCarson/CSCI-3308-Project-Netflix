@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * @author Maryam Mazadi, Matthew Uhlar, Nicolas Carson and Sigrunn Sky
+ * @version 1.0
+ */
+ 
 class Database {
 
     static protected $connection = NULL;
