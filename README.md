@@ -34,7 +34,7 @@ results.php
 
 /docs/--Directory Generated using PHPDocumentor
 
-/Testing/--Links to Automated Tests as well as loadData_test.php; php testing written by Matt Uhlar
+/Testing/ loadData_test.php; as well as Links to Automated Tests and instructions to rerun them if automated results have expired
 
 /stylesheets/
 index.css
