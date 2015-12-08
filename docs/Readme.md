@@ -1,8 +1,6 @@
 # PHPDocumentor Usage
 
-1. First Install PHP Documentor:
-
-2. pear install PHPDocumentor
+1. First Install PHP Documentor: pear install PHPDocumentor
 
 In the project root directory run this command to search current directory and subdirectory for all PHP files:
 
