@@ -19,6 +19,11 @@ Recommended Films are displayed on results page
 
 [Video Demo](https://www.youtube.com/watch?v=D-wpzfT2lAw&feature=youtu.be)
 
+# Deployment Environment Link Cloud9
+(Project Netflix Cloud9 Project Link) (https://ide.c9.io/nicolas9101/csci_3308_project_netflix)
+Other than the 4 project author only Liz Boese has access to the C9 development environment, the TA's could not be invited since their emails do not have Cloud9 Acconts associated with them yet, please contact us if the TA's need to be given access once they have created C9 Accounts, otherwise Liz's CU email account should already have access.
+To Run the code, click Run in the top bar or Priview and then Live Privew to see the live preview of the site running on Cloud 9. Or else go directly to the [Project Netflix Link](https://csci-3308-project-netflix-nicolas9101.c9.io/) to see the site running
+
 # Auto Generated Docs
 
 [Auto Docs](https://github.com/Clacious/CSCI_3308_Project_Netflix/tree/master/docs)
