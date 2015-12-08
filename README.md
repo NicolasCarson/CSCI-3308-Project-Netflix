@@ -33,7 +33,9 @@ results.css
 results.php
 
 /docs/--Directory Generated using PHPDocumentor
+
 /Testing/--Links to Automated Tests as well as loadData_test.php; php testing written by Matt Uhlar
+
 /stylesheets/
 index.css
 results.css
