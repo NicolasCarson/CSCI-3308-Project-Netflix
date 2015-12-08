@@ -34,6 +34,7 @@ CSCI_3308_Porject_Netflix/
 index.html
 results.css
 results.php
+project.html
 
 /docs/--Directory Generated using PHPDocumentor
 
@@ -65,3 +66,5 @@ getFilmInfo.php
 /index.html -- html file for displaying the homepage
 
 /results.php -- php file used to generate how the results retrived from the database are displayed on the site's result page
+
+/project.html -- page display settings
