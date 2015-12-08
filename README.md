@@ -14,7 +14,7 @@ Recommended Films are displayed on results page
 
 # Video Demo
 
-[Vide Demo](https://www.youtube.com/watch?v=D-wpzfT2lAw&feature=youtu.be)
+[Video Demo](https://www.youtube.com/watch?v=D-wpzfT2lAw&feature=youtu.be)
 
 # Auto Generated Docs
 
